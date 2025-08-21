@@ -4,7 +4,6 @@ import { Bird } from "lucide-react"
 import React from "react"
 import { useCreateRoom } from "../hooks/useCreateRoom"
 import { CreateRoomPage } from "./create-room.page"
-import { DialogContent } from "@radix-ui/react-dialog"
 
 export const EmptyRoomListPage = () => {
     const {isOpenModal,setIsOpenModal} = useCreateRoom()
@@ -20,9 +19,7 @@ export const EmptyRoomListPage = () => {
                 secondaryAction={() => console.log("Join Room clicked")}
             />
             <ModalWrapper isOpen={isOpenModal} onClose={() => setIsOpenModal(false)}>
-                <DialogContent className="pt-4">
-                    <CreateRoomPage />
-                </DialogContent>
+                <CreateRoomPage />
             </ModalWrapper>
         </React.Fragment>
         
