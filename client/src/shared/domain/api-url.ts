@@ -3,3 +3,4 @@ export const API_GOOGLE_AUTH_PROVIDER = API_BASE + "/authentification/google-pro
 export const API_GOOGLE_AUTH_PROVIDER_URL = API_GOOGLE_AUTH_PROVIDER + "/get-url"
 export const API_GOOGLE_AUTH_PROVIDER_JWT = API_GOOGLE_AUTH_PROVIDER + "/get-jwt"
 export const API_ASSOCIATED_ROOMS = API_BASE + "/rooms"
+export const API_ASSOCIATED_ROOMS_CREATION = API_BASE + "/rooms"

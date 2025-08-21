@@ -8,6 +8,7 @@ import { Map } from './entities/map.entity';
 import { CreateRoomDto } from './dto/create-room.dto';
 import { UpdateRoomDto } from './dto/update-room.dto';
 import { InviteMemberDto } from './dto/invite-member.dto';
+import { Authentification } from 'src/authentification/entities/authentification.entity';
 
 @Injectable()
 export class RoomsService {
@@ -20,13 +21,20 @@ export class RoomsService {
     private readonly memberRepo: Repository<RoomMember>,
     @InjectRepository(Map)
     private readonly mapRepo: Repository<Map>,
-  ) {}
+    @InjectRepository(Authentification)
+    private readonly authentificationRepository: Repository<Authentification>,
+  ) { }
 
-  async create(dto: CreateRoomDto): Promise<Room> {
-    const room = this.roomRepo.create({ name: dto.name, ownerUuid: dto.ownerUuid });
+  async create(dto: CreateRoomDto, email:string): Promise<Room> {
+    
+    const ownerUuid = await this.authentificationRepository.findOne({ where: { email: email } });
+    if (!ownerUuid) {
+      this.logger.error(`Owner with email ${email} not found`);
+      throw new NotFoundException('Owner not found');
+    }
+    const room = this.roomRepo.create({ name: dto.name, ownerUuid: ownerUuid._uuid });
     const savedRoom = await this.roomRepo.save(room);
 
-    // agregar miembros si existen
     if (dto.members?.length) {
       const members = dto.members.map((u) =>
         this.memberRepo.create({ room: savedRoom, userUuid: u }),
