@@ -1,0 +1,5 @@
+export const API_BASE = "http://127.0.0.1:3001/api/v1"
+export const API_GOOGLE_AUTH_PROVIDER = API_BASE + "/authentification/google-provider"
+export const API_GOOGLE_AUTH_PROVIDER_URL = API_GOOGLE_AUTH_PROVIDER + "/get-url"
+export const API_GOOGLE_AUTH_PROVIDER_JWT = API_GOOGLE_AUTH_PROVIDER + "/get-jwt"
+export const API_ASSOCIATED_ROOMS = API_BASE + "/rooms"

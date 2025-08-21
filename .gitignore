@@ -1,0 +1,11 @@
+# Files
+.env
+yarn.lock
+
+# Folders
+dist/
+node_modules/
+dist/
+
+# Database
+mysql/

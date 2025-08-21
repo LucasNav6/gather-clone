@@ -1,0 +1,3 @@
+export const LS_AUTH_JWT = "ACCESS_TOKEN"
+export const LS_AUTH_PROVIDER = "AUTH_PROVIDER"
+export const LS_GOOGLE_AUTH_PROVIDER = "GOOGLE"
