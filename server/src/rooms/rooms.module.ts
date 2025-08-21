@@ -7,10 +7,11 @@ import { RoomMember } from './entities/room-member.entity';
 import { Room } from './entities/room.entity';
 import { ConfigModule } from '@nestjs/config';
 import { AuthentificationModule } from 'src/authentification/authentification.module';
+import { Authentification } from 'src/authentification/entities/authentification.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Map, RoomMember, Room]),
+    TypeOrmModule.forFeature([Map, RoomMember, Room, Authentification]),
     ConfigModule,
     AuthentificationModule
   ],

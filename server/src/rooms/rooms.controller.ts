@@ -1,5 +1,5 @@
 // rooms/rooms.controller.ts
-import { Controller, Post, Body, Get, Param, Patch, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Patch, Delete, UseGuards, Req } from '@nestjs/common';
 import { RoomsService } from './rooms.service';
 import { UpdateRoomDto } from './dto/update-room.dto';
 import { InviteMemberDto } from './dto/invite-member.dto';
@@ -12,8 +12,8 @@ export class RoomsController {
   constructor(private readonly roomsService: RoomsService) {}
 
   @Post()
-  create(@Body() dto: CreateRoomDto) {
-    return this.roomsService.create(dto);
+  create(@Body() dto: CreateRoomDto, @Req() req: any) {
+    return this.roomsService.create(dto, req.user.email);
   }
 
   @Get()
