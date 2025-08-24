@@ -1,8 +1,9 @@
 import axios, { AxiosHeaders, type InternalAxiosRequestConfig } from "axios";
-import { LS_AUTH_JWT } from "../domain/localstorage";
+import { LS_AUTH_JWT, LS_AUTH_PROVIDER } from "../domain/localstorage";
 import { API_BASE } from "../domain/api-url";
 
 const REQUEST_TIMEOUT = 20000;
+const UNAUTHORIZED = 401
 
 const ApiWithInterceptor = axios.create({
     baseURL: API_BASE,
@@ -36,6 +37,15 @@ ApiWithInterceptor.interceptors.response.use(
         if (axios.isCancel(error) || error.code === "ERR_CANCELED") {
             return Promise.reject(new Error("Request timed out"));
         }
+
+        if (error.response?.status === UNAUTHORIZED) {
+            localStorage.removeItem(LS_AUTH_JWT);
+            localStorage.removeItem(LS_AUTH_PROVIDER);
+
+            window.location.href = "/";
+            return;
+        }
+
         return Promise.reject(error);
     }
 );
