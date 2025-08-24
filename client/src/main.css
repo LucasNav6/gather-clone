@@ -42,99 +42,76 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-  --font-sans: Geist, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: Geist Mono, monospace;
-  --radius: 0.625rem;
-  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow-md: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 2px 4px -1px hsl(0 0% 0% / 0.18);
-  --shadow-lg: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 4px 6px -1px hsl(0 0% 0% / 0.18);
-  --shadow-xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 8px 10px -1px hsl(0 0% 0% / 0.18);
-  --shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
-  --tracking-normal: 0em;
-  --spacing: 0.25rem;
+  /* Updated color tokens to match open source meeting platform design brief */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.35 0 0); /* Dark gray for main text (#475569) */
+  --card: oklch(0.96 0 0); /* Light gray for cards (#f1f5f9) */
+  --card-foreground: oklch(0.35 0 0); /* Dark gray text in cards */
+  --popover: oklch(1 0 0); /* White popover background */
+  --popover-foreground: oklch(0.35 0 0); /* Dark gray popover text */
+  --primary: oklch(0.45 0.15 160); /* Emerald primary color (#059669) */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.55 0.12 160); /* Lighter emerald secondary (#10b981) */
+  --secondary-foreground: oklch(1 0 0); /* White text on secondary */
+  --muted: oklch(0.96 0 0); /* Light gray for muted elements */
+  --muted-foreground: oklch(0.35 0 0); /* Dark gray for muted text */
+  --accent: oklch(0.55 0.12 160); /* Emerald accent color */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.55 0.22 25); /* Red for destructive actions */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.92 0 0); /* Light border color (#e5e7eb) */
+  --input: oklch(1 0 0); /* White input background */
+  --ring: oklch(0.45 0.15 160); /* Emerald focus ring */
+  --chart-1: oklch(0.55 0.12 160); /* Emerald chart color */
+  --chart-2: oklch(0.45 0.15 160); /* Darker emerald */
+  --chart-3: oklch(0.4 0 0); /* Dark gray */
+  --chart-4: oklch(0.75 0.08 160); /* Light emerald */
+  --chart-5: oklch(0.9 0.04 160); /* Very light emerald */
+  --radius: 0.5rem; /* Rounded corners */
+  --sidebar: oklch(0.96 0 0); /* Light gray sidebar */
+  --sidebar-foreground: oklch(0.35 0 0); /* Dark gray sidebar text */
+  --sidebar-primary: oklch(0.45 0.15 160); /* Emerald sidebar primary */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text */
+  --sidebar-accent: oklch(0.55 0.12 160); /* Emerald sidebar accent */
+  --sidebar-accent-foreground: oklch(1 0 0); /* White accent text */
+  --sidebar-border: oklch(0.92 0 0); /* Light sidebar border */
+  --sidebar-ring: oklch(0.45 0.15 160); /* Emerald sidebar focus ring */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-  --font-sans: Geist, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: Geist Mono, monospace;
-  --radius: 0.5rem;
-  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
-  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 1px 2px -1px hsl(0 0% 0% / 0.18);
-  --shadow-md: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 2px 4px -1px hsl(0 0% 0% / 0.18);
-  --shadow-lg: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 4px 6px -1px hsl(0 0% 0% / 0.18);
-  --shadow-xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 8px 10px -1px hsl(0 0% 0% / 0.18);
-  --shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
+  /* Updated dark mode colors to maintain emerald theme with proper contrast */
+  --background: oklch(0.12 0 0); /* Very dark background */
+  --foreground: oklch(0.95 0 0); /* Light text */
+  --card: oklch(0.15 0 0); /* Dark card background */
+  --card-foreground: oklch(0.95 0 0); /* Light card text */
+  --popover: oklch(0.15 0 0); /* Dark popover */
+  --popover-foreground: oklch(0.95 0 0); /* Light popover text */
+  --primary: oklch(0.55 0.12 160); /* Brighter emerald for dark mode */
+  --primary-foreground: oklch(0.12 0 0); /* Dark text on primary */
+  --secondary: oklch(0.25 0.05 160); /* Darker emerald secondary */
+  --secondary-foreground: oklch(0.95 0 0); /* Light text on secondary */
+  --muted: oklch(0.25 0 0); /* Dark muted background */
+  --muted-foreground: oklch(0.7 0 0); /* Medium gray muted text */
+  --accent: oklch(0.55 0.12 160); /* Bright emerald accent */
+  --accent-foreground: oklch(0.12 0 0); /* Dark text on accent */
+  --destructive: oklch(0.55 0.22 25); /* Red destructive */
+  --destructive-foreground: oklch(0.95 0 0); /* Light text on destructive */
+  --border: oklch(0.25 0 0); /* Dark border */
+  --input: oklch(0.25 0 0); /* Dark input background */
+  --ring: oklch(0.55 0.12 160); /* Emerald focus ring */
+  --chart-1: oklch(0.6 0.15 160); /* Bright emerald chart */
+  --chart-2: oklch(0.5 0.12 160); /* Medium emerald */
+  --chart-3: oklch(0.6 0 0); /* Light gray */
+  --chart-4: oklch(0.4 0.08 160); /* Dark emerald */
+  --chart-5: oklch(0.3 0.04 160); /* Very dark emerald */
+  --sidebar: oklch(0.18 0 0); /* Dark sidebar */
+  --sidebar-foreground: oklch(0.95 0 0); /* Light sidebar text */
+  --sidebar-primary: oklch(0.55 0.12 160); /* Bright emerald sidebar primary */
+  --sidebar-primary-foreground: oklch(0.12 0 0); /* Dark text */
+  --sidebar-accent: oklch(0.25 0.05 160); /* Dark emerald sidebar accent */
+  --sidebar-accent-foreground: oklch(0.95 0 0); /* Light accent text */
+  --sidebar-border: oklch(0.25 0 0); /* Dark sidebar border */
+  --sidebar-ring: oklch(0.55 0.12 160); /* Emerald sidebar focus ring */
 }
 
 @theme inline {
